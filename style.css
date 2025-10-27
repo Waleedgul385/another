@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* =======================
+   🔹 NAVBAR
+======================= */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 125px;
+  padding: 20px 10px;
+  background-color: #F5F7FA;
+}
+
+.navicon {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navicon a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease-in;
+}
+
+.navicon a:hover {
+  font-size: large;
+  text-decoration: underline;
+}
+
+.log {
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: green;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.log:hover {
+  color: white;
+  background-color: green;
+}
+
+.sign {
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  transition: all 0.3s ease-in;
+  border: 1px solid green;
+  cursor: pointer;
+}
+
+.sign:hover {
+  background-color: transparent;
+  color: green;
+}
+
+#lo {
+  height: 25px;
+}
+
+/* Smaller screens - navbar */
+@media (max-width: 1098px) {
+  .navicon {
+    gap: 20px;
+  }
+
+  .sign,
+  .log {
+    height: 25px;
+    width: 70px;
+  }
+
+  .nav {
+    gap: 60px;
+  }
+
+  #lo {
+    height: 20px;
+  }
+}
+
+/* =======================
+   🟢 MAIN HERO SECTION
+======================= */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 80px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.lesson {
+  font-size: 4rem;
+  color: #4D4D4D;
+  line-height: 1.2;
+}
+
+.lesson span {
+  color: #53AF4F;
+}
+
+.where {
+  font-size: 1rem;
+  word-spacing: 4px;
+  color: #4D4D4D;
+}
+
+.reg {
+  width: 130px;
+  height: 45px;
+  background-color: #53AF4F;
+  border: 1px solid #53AF4F;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.reg:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.right img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =======================
+   📱 RESPONSIVE ADJUSTMENTS
+======================= */
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 40px;
+  }
+
+  .left {
+    align-items: center;
+  }
+
+  .lesson {
+    font-size: 3rem;
+    width: 100%;
+  }
+
+  .where {
+    font-size: 1rem;
+  }
+
+  .right img {
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 40px 20px;
+  }
+
+  .lesson {
+    font-size: 2.2rem;
+  }
+
+  .where {
+    font-size: 0.9rem;
+  }
+
+  .reg {
+    width: 110px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .right img {
+    width: 100%;
+    max-width: 350px;
+  }
+}

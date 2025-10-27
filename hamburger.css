@@ -1,0 +1,204 @@
+/* ==========================
+   🍔 HAMBURGER MENU STYLES
+   ========================== */
+
+/* Default hidden on desktop */
+#hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#hamburger-btn .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Desktop menu visible */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ==========================
+   📱 Responsive Styles
+   ========================== */
+@media (max-width: 800px) {
+  .nav {
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  #hamburger-btn {
+    display: flex;
+  }
+
+  /* Hide menu on mobile */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(233, 227, 219);
+    padding: 20px 0;
+    text-align: center;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* When active (toggled open) */
+  .menu.active {
+    display: flex;
+  }
+
+  .navicon {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navicon a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+
+  .login {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Animate bars into X */
+  #hamburger-btn.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  #hamburger-btn.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #hamburger-btn.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+/* ==========================
+   🍔 Hamburger Animation (Fully Fixed)
+   ========================== */
+
+/* --- Default desktop view --- */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* --- Responsive for mobile --- */
+@media (max-width: 900px) {
+  /* Show hamburger icon */
+  #hamburger-btn {
+    display: flex;
+  }
+
+  /* Hide dropdown by default */
+  .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(233, 227, 219);
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+
+    /* Animation setup */
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 0.5s ease,
+      opacity 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  /* When menu is active */
+  .menu.active {
+    max-height: 600px; /* adjust height as needed */
+    opacity: 1;
+    padding: 20px 0;
+  }
+
+  /* Inner layout */
+  .navicon {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navicon a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+
+  .login {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Fade-in animation for links */
+  .menu.active .navicon a,
+  .menu.active .login button {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  /* Slide + fade animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+/* ==========================
+   🔧 Keep header layout stable between 800–900px
+   ========================== */
+@media (max-width: 900px) {
+  header,
+  .navbar,
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* keeps logo left, hamburger right */
+    position: relative;
+    padding: 0 20px; /* optional spacing */
+  }
+
+  /* Ensure logo stays left */
+  .logo {
+    margin-right: auto;
+  }
+
+  /* Hamburger stays right */
+  #hamburger-btn {
+    margin-left: auto;
+  }
+
+  /* Centering only affects dropdown, not header */
+  .menu {
+    text-align: center;
+  }
+}

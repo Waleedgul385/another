@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="head">
+        <div class="nav">
+            <div class="logo">
+                <a href="#">
+                    <img id="lo" src="Logo.png" alt="">
+                </a>
+            </div>
+            <!-- HAMBURGER BUTTON -->
+            <div id="hamburger-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="menu" id="hamburger-menu">
+                <div class="navicon">
+                    <a href="#">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Feature</a>
+                    <a href="#">Product</a>
+                    <a href="#">Testimonial</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="login">
+                    <button class="log">Login</button>
+                    <button class="sign">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="left">
+        <h1 class="lesson">Lessons and insights <span>from 8 years</span></h1>
+        <p class="where">Where to grow your business as a photographer: site or social media?</p>
+        <button class="reg">Register</button>
+        </div>
+        <div class="right">
+            <img src="Illustration.png" alt="">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('hamburger-btn');
+            const menu = document.getElementById('hamburger-menu');
+
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('open');
+                menu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
